@@ -1,0 +1,69 @@
+   body {background-image: url("../assets/destination/background-destination-desktop.jpg");}
+
+  .destination {
+    position: absolute;
+    right: 0px;
+    top: 25px;
+    padding: 0 15px;
+    width: 40vw;
+    animation: display 2s;
+  }
+
+  .info {
+    display: flex;
+    gap: 100px;
+    font-family: 'Bellefair', serif;
+    opacity: 0;
+    animation: opacity 2s 1.36s;
+    animation-fill-mode: forwards;
+  }
+
+  .destination > .display-text {
+    margin-top: 10%;
+    min-width: 35vw;
+  }
+
+  input[type="radio"]:checked ~ label {
+    border-bottom: 2px solid white;
+    padding: 25px 0;
+  }
+
+  main > h2 {
+    animation: display-reverse 2s;
+  }
+
+  @media only screen and (max-width: 1000px) { 
+
+    .container {
+      margin-top: 7%;
+    }
+
+    html {
+      background-image: url("../assets/destination/background-destination-tablet.jpg");
+    }
+
+    .destination {
+      position: static;
+      margin-top: 5vh;
+      width: fit-content;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .display-text {
+      margin-top: 15%;
+    }
+
+    .info {
+      gap: 0; 
+      justify-content: space-around;
+      animation: opacity 2s 1.30s;
+    }
+
+    .container > img {
+      animation: opacity 2s;
+    }
+
+}
+

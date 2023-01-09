@@ -1,0 +1,79 @@
+body {background-image: url('../assets/technology/background-technology-desktop.jpg');}
+
+    .container ul {
+      flex-direction: column;
+      display: inline-flex;
+      position: absolute;
+      left: 3%;
+    }
+
+    .container ul li label {
+      border: 1px solid white;
+      padding: 45px;
+      border-radius: 50%;
+      position: relative;
+    }
+
+    .container ul li label:hover, input[type="radio"]:checked ~ label {
+      background-color: white;
+      color: black;
+      cursor: pointer;
+    }
+
+    .container {
+      margin-left: 12%;
+      gap: 7%;
+    }
+
+    .img {
+      height: 420px;
+      overflow: hidden;
+      animation: pointer-change 2.1s ease-in-out;
+      animation-fill-mode: forwards;
+    }
+    
+    .img > img {
+      object-fit: contain;
+      height: 100%;
+    }
+
+    label {display: block;}
+
+    section {width: 100%;}
+
+    .hidden {display: none;}
+
+    main > h2 {animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;}
+
+
+  @media only screen and (max-width: 1000px) {
+
+    .container {
+      flex-direction: column-reverse;
+      margin: 0;
+    }
+
+    .container > .display-text {
+      margin-top: 10vh;
+    }
+
+    .container ul {
+      flex-direction: row;
+      position: relative;
+      top: 5vh;
+      left: 0;
+    }
+
+    .img {
+      display: flex; justify-content: center;
+      height: fit-content;
+    }
+
+    .img > img {
+      width: 100vw;
+      height: fit-content;
+    }
+
+    .container ul li label {padding: 30px;}
+}
+

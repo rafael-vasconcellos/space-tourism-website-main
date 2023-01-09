@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link rel="stylesheet" href="styles/template.css">
+  <link rel="stylesheet" href="styles/index.css">
+  <title>Frontend Mentor | Space tourism website</title>
+</head>
+<body>
+
+  <header>
+      <img width="48" height="48" src="assets/shared/logo.svg">
+      <div></div>
+  
+      <input type="checkbox" id="menu">
+      <label for="menu" class="menu"><div></div></label>
+
+      <nav><ul>
+      <li>
+        <b>00</b> Home
+      </li>
+
+      <li>
+        <b>01</b> Destination 
+      </li>
+
+      <li>
+        <b>02</b> Crew 
+      </li>
+
+      <li>
+        <b>03</b> Technology 
+      </li>
+      </ul><div></div>
+    </nav>
+  </header>
+  <main>
+    
+    <section>
+      <div class="display-text">
+          <h2> So, you want to travel to </h2><br>
+          <h1> SPACE </h1><br>
+          <p> Let’s face it; if you want to go to space, you might as well genuinely go to 
+          outer space and not hover kind of on the edge of it. Well sit back, and relax 
+          because we’ll give you a truly out of this world experience! </p>
+      </div>
+
+      <button> <span>EXPLORE</span> </button>
+    </section>
+  </main>
+
+
+<script src="destination.js"></script>
+<script src="crew.js"></script>
+<script src="technology.js"></script>
+<script>
+
+let nav = document.querySelector('header > nav > ul')
+let css = document.querySelector('head').children[4]
+let main = document.querySelector('main')
+
+let index = new index_page()
+let destination = new destination_page()
+let crew = new crew_page()
+let technology = new technology_page()
+
+
+
+nav.children[0].onclick = () => {
+  css.href = index.css
+  main.innerHTML = index.html
+}
+
+nav.children[1].onclick = () => {
+  css.href = destination.css
+  main.innerHTML = destination.html
+  destination.script()
+}
+
+nav.children[2].onclick = () => {
+  css.href = crew.css
+  main.innerHTML = crew.html
+  crew.script()
+}
+
+nav.children[3].onclick = () => {
+  css.href = technology.css
+  main.innerHTML = technology.html
+  technology.script()
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function index_page() {
+    this.css = "styles/index.css"
+    this.html = document.querySelector('main').innerHTML
+}
+
+function timer(func, time) {
+  let timerObj = setInterval(func, time) // menos usado, irônicamente
+
+  this.start = () => { if (!timerObj) {
+    timerObj = setInterval(func, time)
+  } return this
+}
+
+  this.stop = () => { if (timerObj) {
+    clearInterval(timerObj) ; timerObj = null
+  } return this
+}
+
+this.reset = (newTimer) => {
+  if (newTimer) {time = newTimer}
+  return this.stop().start()
+}
+
+
+}
+
+
+function resetAnim(el) {
+    el.style.animation = 'none'
+    el.offsetHeight
+    el.style.animation = ""
+}
+
+
+</script>
+</body>
+</html>

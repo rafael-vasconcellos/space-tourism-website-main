@@ -1,0 +1,377 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed&family=Bellefair&display=swap');
+
+html {
+    background-repeat: no-repeat;
+    background-color: #0B0D17;
+    background-size: cover;
+}
+
+body {
+    color: white;
+    min-height: 100vh;
+    font-family: 'Barlow Condensed', sans-serif;
+    overflow-x: hidden;
+}
+
+h1, h2 {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    display: inline-block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    padding-left: 50px;
+    gap: 10px;
+}
+
+nav {
+    width: fit-content;
+    height: fit-content;
+    display: inline-block;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+header nav ul li, nav ul li > label {
+    padding: 25px 0;
+    border: 2px solid transparent;
+    text-align: center;
+}
+
+header nav ul li:hover, nav ul li label:hover {
+    border-bottom: 2px solid white;
+    cursor: pointer;
+}
+
+
+
+header nav ul {
+    padding: 0 25px;
+    background-color: rgb(255, 255, 255, .1);
+    animation: opacity 2s;
+}
+
+header nav ul li {width: 6em;}
+
+header nav ul li a {padding: 25px 0;}
+
+header > div {
+    width: 53vw;
+    border:1px solid rgb(255, 255, 255, .3);
+    transform: translateX(+30px);
+    margin-left: 3%;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+
+/* display-text style */
+.display-text {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    gap: 20px;
+    animation: display 2.5s;
+    animation-fill-mode: forwards;
+}
+
+.display-text > p {
+    opacity: 40%;
+    font-family: 'Barlow', sans-serif;
+}
+
+.display-text > h2 {
+    opacity: 40%;
+}
+
+.display-text > h1 {
+    font-size: 72px;
+    font-family: 'Bellefair', serif;
+}
+
+main > h2 {
+    margin: 3% 9%;
+    /**/
+}
+
+h2 > span {
+    opacity: 40%;
+    margin-right:15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* !! content !! */
+.container { 
+    display: flex;
+    gap: 10%;
+    width: 100%;
+  }
+
+  main {
+    padding: 0px 70px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.container > .display-text {
+    min-width: 35vw;
+}
+
+
+@media only screen and (max-width: 1000px) {
+
+    main {padding: 20px 0;}
+
+    .container {
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      top: 5vh;
+    }
+
+    .display-text {
+        text-align: center;
+        margin: 0;
+        width: fit-content;
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 672px) {
+    /* !!!! */
+
+    header > div {
+        display: none;
+    }
+
+    header nav ul li {
+        text-align: left;
+    }
+
+    header > nav {
+        display: none;
+    }
+    
+    header nav ul {
+        flex-direction: column;
+        height: 100vh;
+        padding-top: 110px;
+        background-color: transparent;
+
+        width: 100%;
+        position: fixed; 
+        top: -5%;
+        left: 50%;
+        z-index: 1;
+
+        backdrop-filter: blur(15px);
+        overflow-x: hidden;
+        animation: translationX 0.3s ease-in-out;
+        animation-fill-mode: forwards;
+    }
+
+    header nav ul::after {
+        content: "";
+        display: inline-block;
+        border: 10px solid rgb(255, 255, 255, .25);
+        filter: blur(1px);
+        width: 100%;
+        position: absolute;
+        top: 38%;
+        left: -12%;
+        transform: rotate(-35deg);
+        z-index: 9999;
+        display: none; /* didn't make my idea work here for now */
+    }
+
+    header > nav > div {
+        width: 100%; height: 100%;
+        position: fixed; 
+        top: -5%;
+        left: 50%;
+        z-index: 0;
+        background-color: rgb(255, 255, 255, .05);
+        animation: translationX 0.3s ease-in-out;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        padding: 10px;
+        position: absolute;
+        right: 5%;
+        top: 15px;
+        z-index: 2;
+        cursor: pointer;
+    }
+
+    .menu > div {
+        border: 1px solid white;
+        width: 25px;
+    }
+
+    .menu::after, .menu::before {
+        display: block;
+        content: "";
+        border: 1px solid white;
+        width: 25px;
+        position: relative;
+        transition: .3s;
+    }
+
+    #menu:checked ~ nav {
+        display: block;
+    }
+
+    #menu:checked ~ .menu::before {
+        transform: rotate(-135deg);
+        top: 5px;
+    }
+
+    #menu:checked ~ .menu::after {
+        transform: rotate(135deg);
+        top: -2px;
+    }
+
+    #menu:checked ~ .menu > div {
+        display: none;
+    }
+
+
+}
+
+
+@keyframes display {
+    0% {
+        transform: translateY(5%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 100%;
+    }
+}
+
+@keyframes display-reverse {
+    0% {
+        transform: translateY(-5vh);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 100%;
+    }
+}
+
+@keyframes display-right {
+    0% {
+        transform: translateX(6%);
+        opacity: 35%;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 100%;
+    }
+}
+
+@keyframes height {
+    from {transform: scale(0);}
+
+    to {transform: scale(1);}
+}
+
+@keyframes pointer-change {
+    from {width: 0;}
+
+    to {width: 100%;}
+    
+}
+
+@keyframes opacity {
+    from {opacity: 35%;}
+    to {opacity: 100%;}
+}
+
+@keyframes translationX {
+    from {transform: translateX(100%);}
+
+    to {transform: translateX(0);}
+}
+
+@keyframes tilt {
+    /* animation: tilt 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both; */
+
+    0% {
+      transform: scale(0.75) rotateY(-55deg) translateX(15vw) skewY(-20deg);
+      opacity: 0%;
+    }
+    100% {
+      transform: scale(1) rotateY(0deg) translateX(0) skewY(0deg);
+      opacity: 100%;
+    }
+}
+
+@keyframes tracking-in-expand {
+    0% {
+      letter-spacing: -0.5em;
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 1;
+    }
+}
+
+
+
+
+/*
+p: barlow, else: barlow condensed
+
+h1, h2(crew), button, expo: bellefair
+*/
+

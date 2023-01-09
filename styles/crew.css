@@ -1,0 +1,94 @@
+html {
+    background-image: url("../assets/crew/background-crew-desktop.jpg");
+  }
+
+.inputs {
+  position: absolute;
+  bottom: 15px;
+  left: 70px;
+}
+
+input[type="radio"] {
+  appearance: none;
+  background-color: rgb(255, 255, 255, .2);
+  margin: 0 10px;
+  width: 1.15em;
+  height: 1.15em;
+  border-radius: 50%;
+}
+
+input[type="radio"] {
+  display: inline-block;
+}
+
+input[type="radio"]:checked {
+  background-color: white;
+}
+
+.container {
+  position: absolute;
+}
+
+.display-text {
+  margin: 12% 0;
+}
+
+.container > div:nth-child(2) {
+  height: 100%;
+  overflow: hidden;
+  /*animation: tilt 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;*/
+  animation: display-right 2.1s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.container > div > img {
+  object-fit: contain;
+  height: 100%;
+}
+
+main {
+  position: static;
+}
+
+main > h2 {animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;}
+
+
+@media only screen and (max-width: 1000px) {
+
+  .container {
+    position: relative;
+    flex-direction: column-reverse;
+    width: 100%;
+  }
+
+  .display-text {
+    animation: display 2.1s;
+    margin: 0;
+    margin-top: 5%;
+  }
+
+  html {
+    background-image: url("../assets/crew/background-crew-tablet.jpg");
+    background-position: 0% 80%;
+  }
+
+  .inputs {
+    left: calc(47.5vw - 75.5px);
+    bottom: -5%;
+    padding-bottom: 3%;
+  }
+
+  .container > div:nth-child(2) {
+    animation: opacity 2s;
+    padding-bottom: 3%;
+  }
+
+  .container > div > img {
+    width: 250px;
+    height: 370px;
+    object-fit: cover;
+  }
+
+  body {position: relative;}
+
+}
